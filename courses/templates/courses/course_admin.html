@@ -1,0 +1,29 @@
+{% extends "courses/layout.html" %}
+
+{% block body %}
+
+   <h1>Course: {{ course.c_id }}</h1>
+
+   <ul>
+       <li>Name: {{ course.c_name }}</li>
+       <li>Semestry: {{ course.semestry }}</li>
+       <li>Year: {{ course.year }}</li>
+       <li>Vacancy: {{ student_count }}/{{ course.vacancy }}</li>
+       <li>Status: {{ status }}</li>
+   </ul>
+
+   <h3>Student:</h3>
+
+   <ul>
+       {% for i in students %}
+           <li>{{ i.first_name }} {{ i.last_name }}</li>
+       {% empty %}
+           <li>No applicants</li>
+       {% endfor %}
+   </ul>
+
+       <p><button type="button"><a href="{% url 'courses:book' course.c_id %}">Enroll Course</a></button></p>
+       <p><button type="button"><a href="{% url 'courses:cancel' course.c_id %}">Cancel Enrollment</a></button></p>
+       <p><button type="button"><a href="{% url 'courses:index' %}">Course List</a></button></p>
+       <p><button type="button"><a href="{% url 'users:index' %}" >back home</a></button></p>
+{% endblock %}
