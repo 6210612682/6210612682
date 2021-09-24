@@ -3,5 +3,6 @@ Django==3.2.7
 pytz==2021.1
 sqlparse==0.4.1
 whitenoise==5.3.0
-unicorn
+django-heroku
+gunicorn
 django-heroku
