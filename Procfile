@@ -1,1 +1,1 @@
-wed: gunicorn quota_Register.wsgi
+web: gunicorn quota_Register.wsgi
