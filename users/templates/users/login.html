@@ -5,19 +5,24 @@
     {% if message %}
         {{ message }}
     {% endif %}
-    <h1 id="site-name">Users Login</h1>
-    <form action="{% url 'users:login' %}" method="post">
-        {% csrf_token %}
-        <div class="form-row">
-            <label class="required" for="id_username">Username:</label>
-            <input type="text" name="username" placeholder="Username">
+    <h3 class="text-center text-wite pt-5">Users Login</h3>
+    <div id="container">
+        <div id="login-row" class="row justify-content-center align-items-center">
+            <form action="{% url 'users:login' %}" method="post">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label for="username" class="text-info">Username:</label><br>
+                    <input type="text" name="username" id="username" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="password" class="text-info">Password:</label><br>
+                    <input type="password" name="password" id="password" class="form-control">
+                </div>
+                <div class="submit-group">
+                    <input type="submit" name="submit" class="btn btn-info btn-md" value="submit">
+                </div>
+            </form>
         </div>
-        <div class="form-row">
-            <label class="required" for="id_username">Password:</label>
-            <input type="password" name="password" placeholder="Password">
-        </div>
-        <div class="submit-row">
-            <input type="submit" value="Login">
-        </div>
-    </form>
+    </div>
+
 {% endblock %}

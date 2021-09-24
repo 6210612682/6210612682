@@ -2,11 +2,11 @@
 
 {% block body %}
     
-    <h1>Welcome, {{ request.user.first_name }} {{ request.user.last_name }}</h1>
+    <h2>Welcome, {{ request.user.first_name }} {{ request.user.last_name }}</h2>
     
     <ul>
-        <li>Username: {{ request.user.username }}</li>
-        <li>Email: {{ request.user.email }}</li>
+        <li >Username: {{ request.user.username }}</li>
+        <li >Email: {{ request.user.email }}</li>
         
         <h3>Registered Courses</h3>
              {% for i in student_subject %}
