@@ -41,11 +41,6 @@ class userViewTestCase(TestCase):
         response = c.post(reverse("users:login"), {'username': 'user1', 'password': '6666'})
         self.assertEqual(response.status_code, 200)
 
-
-    def test_login_view_if_user_is_notNone(self):
-        c = Client()
-
-
     def test_login_view(self):
         c = Client()
         response = c.get(reverse("users:login"))
