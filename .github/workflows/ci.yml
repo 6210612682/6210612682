@@ -11,5 +11,5 @@ jobs:
           pip3 install --user -r requirements.txt
           python3 REG/manage.py makemigrations
           python3 REG/manage.py migrate
-          coverage run --source='.' REG/manage.py test
+          coverage run --source='.' manage.py test
           coverage report
