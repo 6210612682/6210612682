@@ -10,7 +10,8 @@ import courses
 class userViewTestCase(TestCase):
 
     def setUp(self):
-        User.objects.create(username = 'user1' , password = '1234', email = 'user1@example.com')
+        password = make_password('1234')
+        User.objects.create(username = 'user1' , password = password , email = 'user1@example.com')
 
 
     def test_view_with_authenciation(self):
@@ -32,7 +33,7 @@ class userViewTestCase(TestCase):
         c = Client()
         user = User.objects.get(username = 'user1')
         response = c.post(reverse("users:login"), {'username': 'user1', 'password': '1234'})
-        self.assertEqual(response.status_code, 200)
+        self.assertEqual(response.status_code, 302)
 
 
     def test_login_view_unsucessful(self):
