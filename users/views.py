@@ -38,6 +38,3 @@ def logout_view(request):
         "message": "Logged out."
     })
     
-
-def check_courses(request):
-    return render(request, "courses/course.html")

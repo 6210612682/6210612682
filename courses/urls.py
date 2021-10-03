@@ -8,5 +8,6 @@ urlpatterns = [
     path('<c_id>', views.course, name="course"),
     path('<c_id>/book', views.books, name="book"),
     path('<c_id>/cancel', views.cancel_enrollment,name="cancel"),
+    path('<c_id>', views.course, name="check_courses"),
 
 ]
