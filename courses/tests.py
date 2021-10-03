@@ -73,7 +73,7 @@ class coursesViewsTestCase(TestCase):
         self.assertEqual(x.students.count(), 1)
 
 
-    def test_guest_user_cannot_remove_course(self):
+    def test_cannot_cancel_course(self):
         c = Client()
         user = User.objects.create(username = 'user2' , password = '1234' , email = 'user2@example.com')
         x = Course.objects.first()
